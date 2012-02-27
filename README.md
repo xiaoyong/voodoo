@@ -10,9 +10,9 @@ Running on OpenShift
 
 Create an account at http://openshift.redhat.com/
 
-Create a rack-1.1 application
+Create a ruby-1.8 application
 
-    rhc-create-app -a sinatra -t rack-1.1
+    rhc-create-app -a sinatra -t ruby-1.8
 
 Add this upstream sinatra repo
 
