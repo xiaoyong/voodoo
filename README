@@ -15,7 +15,7 @@ config.ru - This file is used by Rack-based servers to start the application.
 Environment Variables
 =====================
 
-OpenShift Express provides several environment variables to reference for ease
+OpenShift provides several environment variables to reference for ease
 of use.  The following list are some common variables but far from exhaustive:
 
     ENV['OPENSHIFT_APP_NAME']  - Application name
