@@ -1,0 +1,40 @@
+body {
+  font-family:Helvetica,Arial,Heiti,Sans-serif;
+  font-size:11pt;
+  background-color:white;
+  color:black;
+}
+
+/* h1 {font-size:16pt;color:gray} */
+
+#logo {
+  margin-top:0px;
+  margin-bottom:0px;
+  text-align:center;
+  font-family:Comic Sans MS;
+  font-size:48pt;
+  color:red;
+}
+
+#search {
+  margin-top:10px;
+  font-size:12pt;
+}
+
+p.result {
+  margin:15px auto 0px auto;
+  width: 900px;
+  padding:15px;
+  background-color:#e0ecf8;
+  line-height:150%;
+  border:solid thin gray;
+}
+
+.left {text-align:left}
+.right {text-align:right}
+.center {text-align:center}
+.blink {text-decoration:blink}
+
+a:link {color:#0000ff;text-decoration:none}      /* unvisited link */
+a:visited {color:purple;text-decoration:none}  /* visited link */
+a:hover {color:#00ff00;text-decoration:none}  /* mouse over link */

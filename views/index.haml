@@ -1,0 +1,22 @@
+%p#logo Voodoo
+.center
+  %form{:name => "form", :action => "/search", :method => "post", :onsubmit => "return checkform(this);"}
+    %p
+      %input#search{:type => "text", :name => "keyword", :size => "35"}
+      %input{:type => "submit", :value => "Search"}
+    %table{:style => "width: 100%; font-size: 9pt; font-family: monospace"}
+      %tbody
+        %tr
+          %td{:style => "width:50%; padding: 10px; text-align: right", :valign => "top"}
+            %fieldset{:style => "border:0"}
+              %legend{:style => "color:gray"} search fields:
+              \/picb/share/<input type="checkbox" name="share" checked="checked"><br>
+              \/picb/student/<input type="checkbox" name="student" checked="checked"><br>
+              \/picb/intprog/<input type="checkbox" name="intprog" checked="checked"><br>
+              \/picb/extprog/<input type="checkbox" name="extprog"><br>
+              \/picb/ports/<input type="checkbox" name="ports">
+          %td{:style => "width:50%; padding: 10px; text-align: left", :valign => "top"}
+            %fieldset{:style => "border:0"}
+              %legend{:style => "color:gray"} keyword settings:
+              case sensitive<input type="checkbox" name="case"><br>
+              &nbsp;&nbsp;&nbsp; use regexp<input type="checkbox" name="regexp">
