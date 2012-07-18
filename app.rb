@@ -53,10 +53,6 @@ post '/search' do
   haml :search
 end
 
-get '/test' do
-  haml :test
-end
-
 # Picked from Module ActiveSupport
 # File lib/active_support/inflector.rb, line 295
 def ordinalize(number)
