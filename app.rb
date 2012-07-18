@@ -39,7 +39,6 @@ post '/search' do
   cmd += " '" + keyword + "'"
   File.open("../data/log/voodoo.log", "a") do |f|
     f.puts((Time.now.getutc + 8*3600).strftime("%Y-%m-%d %H:%M:%S") + " +08:00 " + params.to_json)
-    puts cmd
   end
 
   @time_cost = Benchmark.realtime { @results = `#{cmd}`.split(/\n/) }
