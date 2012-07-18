@@ -33,7 +33,7 @@ post '/search' do
   end
 
   if params["category"] != "all"
-    keyword += '.*\.(' + (params["category"] == "application" ? "app|" : "") + MIME::Types[/^#{params["category"]}/, :complete => true].map { |t| t.extensions.join("|") }.join("|") + ')$'
+    keyword += '.*\.(' + (params["category"] == "application" ? "app|" : "") + MIME::Types[/^#{params["category"]}/, {:complete => true}].map { |t| t.extensions.join("|") }.join("|") + ')$'
   end
 
   cmd += " '" + keyword + "'"
