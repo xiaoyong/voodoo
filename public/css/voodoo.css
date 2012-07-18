@@ -57,6 +57,7 @@ body {
 
 #results {
   margin-top:20px;
+  margin-bottom:20px;
   margin-left:150px;
   width: 800px;
   padding:15px;
@@ -65,6 +66,7 @@ body {
   border:solid thin gray;
   clear:both;
   float:left;
+  overflow:auto;
 }
 
 #toggleAdvanced {

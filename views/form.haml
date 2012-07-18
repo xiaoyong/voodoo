@@ -2,8 +2,8 @@
   %div
     %input#all{:type => 'radio', :name => 'category', :value => 'all'}
     %label{:for => "all"} All
-    %input#app{:type => 'radio', :name => 'category', :value => 'application'}
-    %label{:for => "app"} Application
+    %input#application{:type => 'radio', :name => 'category', :value => 'application'}
+    %label{:for => "application"} Application
     %input#audio{:type => 'radio', :name => 'category', :value => 'audio'}
     %label{:for => "audio"} Audio
     %input#image{:type => 'radio', :name => 'category', :value => 'image'}
@@ -24,19 +24,19 @@
             %fieldset{:style => "border:0"}
               %legend{:style => "color:gray"} search fields:
               %label{:for => "share"} /picb/share/
-              %input#share{:type => "checkbox", :name => "share", :checked => "checked"}
+              %input#share{:type => "checkbox", :name => "share"}
               %br
               %label{:for => "student"} /picb/student/
-              %input#student{:type => "checkbox", :name => "student", :checked => "checked"}
+              %input#student{:type => "checkbox", :name => "student"}
               %br
               %label{:for => "extprog"} /picb/extprog/
-              %input#extprog{:type => "checkbox", :name => "extprog", :checked => "checked"}
+              %input#extprog{:type => "checkbox", :name => "extprog"}
               %br
               %label{:for => "intprog"} /picb/intprog/
-              %input#intprog{:type => "checkbox", :name => "intprog", :checked => "checked"}
+              %input#intprog{:type => "checkbox", :name => "intprog"}
               %br
               %label{:for => "ports"} /picb/ports/
-              %input#ports{:type => "checkbox", :name => "ports", :checked => "checked"}
+              %input#ports{:type => "checkbox", :name => "ports"}
               %br
           %td{:style => "width:50%; padding: 10px; text-align: left", :valign => "top"}
             %fieldset{:style => "border:0"}

@@ -6,14 +6,16 @@ set :haml, :format => :html5
 
 get '/' do
   @is_home = true
+  @params_json = '{"category":"all","keyword":"","share":"on","student":"on","intprog":"on"}' # Default search settings
   haml :index
 end
 
 post '/search' do
+  @params_json = params.to_json
   # All post form data are stored in params
 
   cmd = "/usr/bin/locate -l 5000 -d "
-  db_candidates = %w(student share extprog intprog ports)
+  db_candidates = %w(share student extprog intprog ports)
   databases = db_candidates.select { |db| params[db] }
   cmd += databases.map { |db| "../data/locate/picb_#{db}.db" }.join(":")
 

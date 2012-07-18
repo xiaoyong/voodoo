@@ -14,6 +14,20 @@
           $('#toggleAdvanced').html("[+] more");
           $('#toggleAdvanced').attr('title', 'Show advanced settings');
         }
+
+        // Populate settings using @params_json
+        var params = JSON.parse('#{@params_json}');
+        $.each (params, function(key, value) {
+          if (key == "category") {
+            $('#' + value).prop("checked", true);
+          } else if (key == "keyword") {
+            $('#searchBar').val(value);
+          } else if (value == "on") {
+            $('#' + key).prop("checked", true);
+          }
+        });
+
+
         $('form').submit(function() {
           if ($('#searchBar').val() == "") {
             alert("Empty keyword!");
@@ -37,10 +51,8 @@
               $('#toggleAdvanced').html("[-] less");
               $('#toggleAdvanced').attr('title', 'Hide advanced settings');
             }
-
           });
         });
-
       });
 
   %body
