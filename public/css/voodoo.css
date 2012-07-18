@@ -69,6 +69,13 @@ body {
   overflow:auto;
 }
 
+.lineNumber {
+  font-size:10pt;
+  font-family:monospace;
+  color:gray;
+  white-space:pre;
+}
+
 #toggleAdvanced {
   font-size: 9pt;
   font-family: monospace;
