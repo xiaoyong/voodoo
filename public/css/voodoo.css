@@ -5,8 +5,6 @@ body {
   color:black;
 }
 
-/* h1 {font-size:16pt;color:gray} */
-
 #logo {
   text-align:center;
   font-family:Comic Sans MS;
@@ -53,6 +51,7 @@ body {
   text-align:center;
   font-size:10pt;
   float:left;
+  color:gray;
 }
 
 #results {

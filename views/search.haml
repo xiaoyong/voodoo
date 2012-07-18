@@ -4,12 +4,12 @@
   #form.search
     = haml :form
   #searchInfo
-    Voodoo's <span style="color:red; font-family:monospace">#{@search_count}</span> Search<br>
-    Hit <span style="color:red;font-family:monospace;"> #{@results.length}</span> entries within <span style="color:red; font-family:monospace;">#{"%.2f" % @time_cost}</span> seconds<br>
-    Database last updated at <span style="color:red; font-family:monospace">#{@db_update}</span>
+    - results_len = @results.length
+    Voodoo's #{@search_count} Search<br>
+    Hit #{results_len} entries within #{"%.2f" % @time_cost} seconds<br>
+    Database last updated at #{@db_update}
   
 #results
-  - results_len = @results.length
   - if results_len == 0
     %span{:style => "color:red"} Oops! No result found.
   - else
