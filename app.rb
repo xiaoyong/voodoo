@@ -1,4 +1,5 @@
 require 'benchmark'
+require 'json'
 
 set :haml, :format => :html5
 
@@ -25,7 +26,7 @@ post '/search' do
 
   cmd += " '" + keyword + "'"
   File.open("../data/log/voodoo.log", "a") do |f|
-    f.puts Time.now.to_s + " " + params.to_s 
+    f.puts Time.now.to_s + " " + params.to_json
     puts cmd
   end
 

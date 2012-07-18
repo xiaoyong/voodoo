@@ -3,25 +3,42 @@
   %head
     %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=UTF-8"}
     %link{:rel => "stylesheet", :type => "text/css", :href => "css/voodoo.css"}
-    :javascript
-      function getFocus() {
-        document.form.keyword.focus();
-      }
-      function checkform(form) {
-        if (form.keyword.value.trim() == "") {
-          alert("Empty keyword!");
-          form.keyword.focus();
-          return false;
-        }
-        if (! (form.share.checked || form.student.checked || form.extprog.checked || form.intprog.checked || form.ports.checked) ) {
-          alert("You must specify at least one search field!");
-          return false;
-        }
-        return true;
-      }
-        
+    %script{:type => "text/javascript", :src => "js/jquery-1.7.2.min.js"}
 
-  %body{:onload => "getFocus()"}
+    :javascript
+      $(document).ready(function() {
+        //$('#advanced').hide();
+        $('#search').focus();
+        $('form').submit(function() {
+          if ($('#search').val() == "") {
+            alert("Empty keyword!");
+            $('#search').focus();
+            return false;
+          }
+          if (! ($('input[name="share"]').prop('checked') || $('input[name="student"]').prop('checked') || $('input[name="intprog"]').prop('checked') || $('input[name="extprog"]').prop('checked') || $('input[name="ports"]').prop('checked')) ) {
+            alert("You must specify at least one search field!");
+            return false;
+          }
+          return true;
+        });
+
+        $('#toggleAdvanced').click(function() {
+          var txt = $(this).html();
+          $('#advanced').slideToggle('slow', function() {
+            if (txt == "[-] less") {
+              $('#toggleAdvanced').html("[+] more");
+              $('#toggleAdvanced').attr('title', 'Show advanced settings');
+            } else {
+              $('#toggleAdvanced').html("[-] less");
+              $('#toggleAdvanced').attr('title', 'Hide advanced settings');
+            }
+
+          });
+        });
+
+      });
+
+  %body
     = yield
 
     / Google Analytics

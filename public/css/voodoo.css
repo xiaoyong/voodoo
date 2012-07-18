@@ -36,5 +36,5 @@ p.result {
 .blink {text-decoration:blink}
 
 a:link {color:#0000ff;text-decoration:none}      /* unvisited link */
-a:visited {color:purple;text-decoration:none}  /* visited link */
+a:visited {color:#0000ff;text-decoration:none}  /* visited link */
 a:hover {color:#00ff00;text-decoration:none}  /* mouse over link */
