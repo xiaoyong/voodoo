@@ -8,33 +8,70 @@ body {
 /* h1 {font-size:16pt;color:gray} */
 
 #logo {
-  margin-top:0px;
-  margin-bottom:0px;
   text-align:center;
   font-family:Comic Sans MS;
-  font-size:48pt;
   color:red;
 }
 
-#search {
+#logo.home {
   margin-top:10px;
+  margin-bottom:0px;
+  font-size:48pt;
+}
+
+#logo.search {
+  margin-left:10px;
+  font-size:24pt;
+  float:left;
+}
+
+#logo a:link {color:red;text-decoration:none}      /* unvisited link */
+#logo a:visited {color:red;text-decoration:none}  /* visited link */
+#logo a:hover {color:red;text-decoration:none}  /* mouse over link */
+
+#form.home {
+  margin-top:10px;
+  text-align:center;
+}
+
+#form.search {
+  margin-left:30px;
+  text-align:center;
+  float:left;
+}
+
+#searchBar {
   font-size:12pt;
 }
 
-p.result {
-  margin:15px auto 0px auto;
-  width: 900px;
+#header {
+  margin-top:10px;
+}
+
+#searchInfo {
+  margin-left:30px;
+  text-align:center;
+  font-size:10pt;
+  float:left;
+}
+
+#results {
+  margin-top:20px;
+  margin-left:150px;
+  width: 800px;
   padding:15px;
   background-color:#e0ecf8;
   line-height:150%;
   border:solid thin gray;
+  clear:both;
+  float:left;
 }
 
-.left {text-align:left}
-.right {text-align:right}
-.center {text-align:center}
-.blink {text-decoration:blink}
+#toggleAdvanced {
+  font-size: 9pt;
+  font-family: monospace;
+}
 
-a:link {color:#0000ff;text-decoration:none}      /* unvisited link */
-a:visited {color:#0000ff;text-decoration:none}  /* visited link */
-a:hover {color:#00ff00;text-decoration:none}  /* mouse over link */
+a#toggleAdvanced:link {color:#0000ff;text-decoration:none}      /* unvisited link */
+a#toggleAdvanced:visited {color:#0000ff;text-decoration:none}  /* visited link */
+a#toggleAdvanced:hover {color:#00ff00;text-decoration:none}  /* mouse over link */

@@ -7,12 +7,17 @@
 
     :javascript
       $(document).ready(function() {
-        //$('#advanced').hide();
-        $('#search').focus();
+        if ("#{@is_home}" == "true") {
+          $('#searchBar').focus();
+        } else {
+          $('#advanced').hide();
+          $('#toggleAdvanced').html("[+] more");
+          $('#toggleAdvanced').attr('title', 'Show advanced settings');
+        }
         $('form').submit(function() {
-          if ($('#search').val() == "") {
+          if ($('#searchBar').val() == "") {
             alert("Empty keyword!");
-            $('#search').focus();
+            $('#searchBar').focus();
             return false;
           }
           if (! ($('input[name="share"]').prop('checked') || $('input[name="student"]').prop('checked') || $('input[name="intprog"]').prop('checked') || $('input[name="extprog"]').prop('checked') || $('input[name="ports"]').prop('checked')) ) {

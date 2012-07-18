@@ -1,9 +1,14 @@
-%p{:style => "text-align:center; font-size:10pt;"}
-  Voodoo's <span style="color:red; font-family:monospace">#{@search_count}</span> Search<br>
-  Hit <span style="color:red;font-family:monospace;"> #{@results.length}</span> entries within <span style="color:red; font-family:monospace;">#{"%.2f" % @time_cost}</span> seconds<br>
-  Database last updated at <span style="color:red; font-family:monospace">#{@db_update}</span>
+#header
+  #logo.search
+    %a{:href => "/"} Voodoo
+  #form.search
+    = haml :form
+  #searchInfo
+    Voodoo's <span style="color:red; font-family:monospace">#{@search_count}</span> Search<br>
+    Hit <span style="color:red;font-family:monospace;"> #{@results.length}</span> entries within <span style="color:red; font-family:monospace;">#{"%.2f" % @time_cost}</span> seconds<br>
+    Database last updated at <span style="color:red; font-family:monospace">#{@db_update}</span>
   
-%p.result
+#results
   - if @results.length == 0
     %span{:style => "color:red"} Oops! No result found.
   - else

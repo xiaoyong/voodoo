@@ -5,6 +5,7 @@ require 'mime/types'
 set :haml, :format => :html5
 
 get '/' do
+  @is_home = true
   haml :index
 end
 
