@@ -38,7 +38,7 @@ post '/search' do
 
   cmd += " '" + keyword + "'"
   File.open("../data/log/voodoo.log", "a") do |f|
-    f.puts Time.now.getlocal("+08:00").strftime("%Y-%m-%d %H:%M:%S %:z") + " " + params.to_json
+    f.puts (Time.now.getutc + 8*3600).strftime("%Y-%m-%d %H:%M:%S") + " +08:00 " + params.to_json
     puts cmd
   end
 
@@ -46,7 +46,7 @@ post '/search' do
 
   # Gather extra information
   # Database last update time
-  @db_update = File.mtime("../data/locate/picb_student.db").getlocal("+08:00").strftime("%Y-%m-%d %H:%M:%S %:z")
+  @db_update = (File.mtime("../data/locate/picb_student.db").getutc + 8*3600).strftime("%Y-%m-%d %H:%M:%S") + " +08:00"
   # Voodoo search count
   @search_count = ordinalize(`wc -l ../data/log/voodoo.log`.split.first.to_i)
 
