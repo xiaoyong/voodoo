@@ -2,6 +2,19 @@
 .center
   %form{:name => "form", :action => "/search", :method => "post"}
     %p
+      %input#all{:type => 'radio', :name => 'category', :value => 'all'}
+      %label{:for => "all"} All
+      %input#app{:type => 'radio', :name => 'category', :value => 'application'}
+      %label{:for => "app"} Application
+      %input#audio{:type => 'radio', :name => 'category', :value => 'audio'}
+      %label{:for => "audio"} Audio
+      %input#image{:type => 'radio', :name => 'category', :value => 'image'}
+      %label{:for => "image"} Image
+      %input#text{:type => 'radio', :name => 'category', :value => 'text'}
+      %label{:for => "text"} Text
+      %input#video{:type => 'radio', :name => 'category', :value => 'video'}
+      %label{:for => "video"} Video
+    %p
       %input#search{:type => "text", :name => "keyword", :size => "35"}
       %input{:type => "submit", :value => "Search"}
       %a#toggleAdvanced{:href => "#", :onclick => "return false;", :title => "Hide advanced settings", :style => "font-size: 9pt; font-family: monospace"} [-] less

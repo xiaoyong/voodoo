@@ -1,5 +1,6 @@
 require 'benchmark'
 require 'json'
+require 'mime/types'
 
 set :haml, :format => :html5
 
@@ -16,12 +17,20 @@ post '/search' do
   cmd += databases.map { |db| "../data/locate/picb_#{db}.db" }.join(":")
 
   cmd += " -i" unless params["case"]
-  cmd += " --regex" if params["regexp"]
+  cmd += " --regex" if params["regexp"] || params["category"] != "all"
 
   keyword = params["keyword"].strip
   if !params["regexp"] && keyword !~ /\*/ && keyword =~ /\s/
-    keyword.gsub!(/\s+/, "*")
-    keyword = "*" + keyword + "*"
+    if params["category"] == "all" 
+      keyword.gsub!(/\s+/, "*")
+      keyword = "*" + keyword + "*"
+    elsif params["category"] != "all"
+      keyword.gsub!(/\s+/, '.*')
+    end
+  end
+
+  if params["category"] != "all"
+    keyword += '.*\.(' + (params["category"] == "application" ? "app|" : "") + MIME::Types[/^#{params["category"]}/, :complete => true].map { |t| t.extensions.join("|") }.join("|") + ')$'
   end
 
   cmd += " '" + keyword + "'"
