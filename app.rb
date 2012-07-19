@@ -33,10 +33,16 @@ post '/search' do
   end
 
   if params["category"] != "all"
-    keyword += '.*\.(' + (params["category"] == "application" ? "app|" : "") + MIME::Types[/^#{params["category"]}/, {:complete => true}].map { |t| t.extensions.join("|") }.join("|") + ')$'
+    suffixes = (params["category"] == "application" ? "app|" : "") + MIME::Types[/^#{params["category"]}/, {:complete => true}].map { |t| t.extensions.join("|") }.join("|")
+    if keyword =~ /#{suffixes}/i
+      keyword += '$'
+    else
+      keyword += '.*\.(' + suffixes + ')$'
+    end
   end
 
   cmd += " '" + keyword + "'"
+  puts cmd
   File.open("../data/log/voodoo.log", "a") do |f|
     f.puts((Time.now.getutc + 8*3600).strftime("%Y-%m-%d %H:%M:%S") + " +08:00 " + params.to_json)
   end
