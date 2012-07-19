@@ -11,10 +11,9 @@
       $(document).ready(function() {
         if ("#{@is_home}" == "true") {
           $('#searchBar').focus();
-        } else {
-          $('#advanced').hide();
-          $('#toggleAdvanced').html("[+] more");
-          $('#toggleAdvanced').attr('title', 'Show advanced settings');
+          $('#advanced').show();
+          $('#toggleAdvanced').html("[-] less");
+          $('#toggleAdvanced').attr('title', 'Hide advanced settings');
         }
 
         // Populate settings using @params_json

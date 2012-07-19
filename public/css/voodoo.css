@@ -42,6 +42,10 @@ body {
   font-size:12pt;
 }
 
+#advanced {
+  display:none;
+}
+
 #header {
   margin-top:10px;
 }
@@ -83,3 +87,22 @@ body {
 a#toggleAdvanced:link {color:#0000ff;text-decoration:none}      /* unvisited link */
 a#toggleAdvanced:visited {color:#0000ff;text-decoration:none}  /* visited link */
 a#toggleAdvanced:hover {color:#00ff00;text-decoration:none}  /* mouse over link */
+
+/* Category style
+ * based on http://jsfiddle.net/heZBT/
+ */
+input[type="radio"] {
+  display:none;
+}
+
+input[type="radio"] + label {
+  padding:0px 11px;
+  color:blue;
+  cursor:pointer;
+}
+
+input[type="radio"]:checked + label {
+  color:black;
+  font-weight:bold;
+  cursor:auto;
+}
