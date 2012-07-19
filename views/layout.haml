@@ -5,6 +5,7 @@
     %meta{"http-equiv" => "Content-Type", :content => "text/html; charset=UTF-8"}
     %link{:rel => "stylesheet", :type => "text/css", :href => "css/voodoo.css"}
     %script{:type => "text/javascript", :src => "js/jquery-1.7.2.min.js"}
+    %script{:type => "text/javascript", :src => "js/jquery.watermark.min.js"}
     %script{:type => "text/javascript", :src => "js/voodoo.js"}
 
     :javascript
@@ -15,6 +16,8 @@
           $('#toggleAdvanced').html("[-] less");
           $('#toggleAdvanced').attr('title', 'Hide advanced settings');
         }
+
+        $('#searchBar').watermark("Enter keyword here");
 
         // Populate settings using @params_json
         var params = JSON.parse('#{@params_json}');
