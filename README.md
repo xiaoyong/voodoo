@@ -28,8 +28,8 @@ job.
 
 ### Front End
 
-The web server side scripting was previously in [Perl CGI](bin/voodoo.pl). Now
-it is moved to [Sinatra](http://www.sinatrarb.com/) in Ruby.
+The web server side scripting was previously in Perl CGI (see `bin/voodoo.pl`).
+Now it is moved to [Sinatra](http://www.sinatrarb.com/) in Ruby.
 [jQuery](http://jquery.com/) is used to facilitate client side scripting.
 
 ### Deployment
