@@ -4,6 +4,14 @@ require 'mime/types'
 
 set :haml, :format => :html5
 
+not_found do
+  'I am not here, not there. Guess <a href="/">where I am</a>?'
+end
+
+error do
+  'I am broken! Please call <a href="mailto:solary.sh@gmail.com">xiaoyong</a> to fix me!'
+end
+
 get '/' do
   @is_home = true
   @params_json = '{"category":"all","keyword":"","share":"on","student":"on","intprog":"on"}' # Default search settings
