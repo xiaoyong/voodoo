@@ -79,6 +79,10 @@ body {
   white-space:pre;
 }
 
+.filePath {
+  cursor: pointer;
+}
+
 #toggleAdvanced {
   font-size: 9pt;
   font-family: monospace;
