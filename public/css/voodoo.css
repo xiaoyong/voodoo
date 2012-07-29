@@ -76,11 +76,13 @@ body {
   font-size:10pt;
   font-family:monospace;
   color:gray;
-  white-space:pre;
 }
 
 .filePath {
   cursor: pointer;
+  font-size:11pt;
+  font-family:Helvetica,Arial,Heiti,Sans-serif;
+  color:black;
 }
 
 #toggleAdvanced {

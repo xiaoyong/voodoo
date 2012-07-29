@@ -13,5 +13,7 @@
   - if results_len == 0
     %span{:style => "color:red"} Oops! No result found.
   - else
-    - @results.each_with_index do |r,i|
-      = "<span class='lineNumber'>%#{results_len.to_s.length}d. </span><span class='filePath'>%s</span><br>\n" % [i+1, r]
+    %ol.lineNumber
+      - @results.each do |r|
+        %li
+          %span.filePath #{r}
