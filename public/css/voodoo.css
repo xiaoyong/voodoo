@@ -63,7 +63,7 @@ body {
   margin-bottom:20px;
   margin-left:150px;
   width: 800px;
-  padding:15px;
+  padding:10px;
   background-color:#e0ecf8;
   line-height:150%;
   border:solid thin gray;
@@ -74,14 +74,12 @@ body {
 
 .lineNumber {
   font-size:10pt;
-  font-family:monospace;
   color:gray;
 }
 
 .filePath {
   cursor: pointer;
   font-size:11pt;
-  font-family:Helvetica,Arial,Heiti,Sans-serif;
   color:black;
 }
 
