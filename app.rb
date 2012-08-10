@@ -18,7 +18,7 @@ get '/' do
   haml :index
 end
 
-post '/search' do
+get '/search' do
   @params_json = params.to_json
   # All post form data are stored in params
 
